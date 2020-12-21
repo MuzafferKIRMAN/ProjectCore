@@ -1,0 +1,32 @@
+﻿@model List<Student>
+
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th scope="col">Adı</th>
+            <th scope="col">Soyadı</th>
+            <th scope="col">Sınıfı</th>
+            <th scope="col">Okul No</th>
+            <th scope="col">Güncelle</th>
+            <th scope="col">Silme</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.StudentName</td>
+                <td>@item.StudentSurname</td>
+                <td>@item.Class</td>
+                <td>@item.StudentNumber</td>
+                <td><a class="btn btn-secondary" href="/Core/UpdateStudent/@item.Id"></a></td>
+                <td><a  class="btn btn-danger" href="/Core/DelStudent/@item.Id"></a></td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<p class="text-right"><a class="btn btn-primary" href="/Core/ExcelExport">Excel'e Kaydet</a></p>
+
+<p class="text-right"><a class="btn btn-dark" href="/Core/Index">Çıkış</a></p>

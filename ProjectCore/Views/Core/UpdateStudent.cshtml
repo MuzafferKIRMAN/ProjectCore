@@ -1,0 +1,31 @@
+﻿@model Student
+
+
+<div class="login-form">
+    <form action="/Core/UpdateStudent" method="post">
+        <input type="text" name="Id" hidden value="@Model.Id" />
+        <h2 class="text-center">Hoş Geldiniz.</h2>
+        <div class="form-group">
+            <input type="text" class="form-control" name="StudentName" placeholder="Öğrenci Adı" required="required" value="@Model.StudentName">
+        </div>
+        <div class="form-group">
+            <input type="text" class="form-control" placeholder="Öğrenci Soyadı" name="StudentSurname" required="required" value="@Model.StudentSurname">
+        </div>
+        <div class="form-group">
+            <input type="text" class="form-control" placeholder="Öğrenci Numarası" name="StudentNumber" required="required" value="@Model.StudentNumber">
+        </div>
+        <div class="form-group">
+            <input type="text" class="form-control" placeholder="Öğrenci Sınıfı" name="Class" required="required" value="@Model.Class">
+        </div>
+        <div class="form-group">
+            <button type="submit" class="btn btn-success btn-block">Kaydet</button>
+        </div>
+
+        @ViewBag.mesaj
+        @*<div class="clearfix">
+            <label class="float-left form-check-label"><input type="checkbox"> Remember me</label>
+            <a href="#" class="float-right">Forgot Password?</a>
+        </div>*@
+    </form>
+    <p class="text-center"><a href="/Core/StudentList">Öğrenci Listesi</a></p>
+</div>

@@ -1,0 +1,27 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+
+
+<div class="login-form">
+    <form action="/Core/Index" method="post">
+        <h2 class="text-center">Hoş Geldiniz.</h2>
+        <div class="form-group">
+            <input type="text" class="form-control" name="Username" placeholder="Kullanıcı Adı" required="required">
+        </div>
+        <div class="form-group">
+            <input type="password" class="form-control" placeholder="Şifre" name="UserPassword" required="required">
+        </div>
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary btn-block">Giriş</button>
+        </div>
+
+        @ViewBag.mesaj
+        @*<div class="clearfix">
+            <label class="float-left form-check-label"><input type="checkbox"> Remember me</label>
+            <a href="#" class="float-right">Forgot Password?</a>
+        </div>*@
+    </form>
+    <p class="text-center"><a href="/Core/CreateUser">Hesap Oluştur</a></p>
+</div>
